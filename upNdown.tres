@@ -1,0 +1,19 @@
+[gd_resource type="Animation" load_steps=1 format=2]
+
+
+[resource]
+
+resource_name = "kudos_test"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Success:position")
+tracks/0/interp = 2
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2.19373, -18.1004 ), Vector2( -2.19373, -21.445 ), Vector2( -2.19373, -18.1004 ) ]
+}

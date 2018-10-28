@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://ini-level-idea/Asset 2ini.png" type="Texture" id=2]
+[ext_resource path="res://ini-level-idea/green-blocini.png" type="Texture" id=3]
+[ext_resource path="res://ini-level-idea/Asset 1ini.png" type="Texture" id=4]
+[ext_resource path="res://ini-level-idea/kudosini.png" type="Texture" id=5]
+[ext_resource path="res://upNdown.tres" type="Animation" id=6]
+
+[sub_resource type="Shader" id=1]
+
+_code = {
+"fragment": "",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[sub_resource type="ShaderMaterial" id=2]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="game" type="Node2D"]
+
+material = SubResource( 2 )
+position = Vector2( 511.845, 300.048 )
+scale = Vector2( 16.0077, 9.3777 )
+script = ExtResource( 1 )
+
+[node name="sol" type="TextureButton" parent="."]
+
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = -29.0
+margin_top = -24.0
+margin_right = 11.0
+margin_bottom = 16.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="blue block" type="Sprite" parent="."]
+
+visible = false
+position = Vector2( 2.96408, -15.5768 )
+scale = Vector2( 0.1, 0.163067 )
+texture = ExtResource( 2 )
+
+[node name="green block" type="Sprite" parent="."]
+
+visible = false
+position = Vector2( -6.96622, 1.19186 )
+scale = Vector2( 0.01, 0.0173301 )
+texture = ExtResource( 3 )
+
+[node name="green block4" type="TextureButton" parent="."]
+
+visible = false
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = -10.0
+margin_top = -29.0
+margin_right = -3.0
+margin_bottom = -18.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+texture_normal = ExtResource( 4 )
+params/resize_mode = 1
+texture_scale = Vector2( 0.1, 0.1 )
+params/stretch_mode = 0
+
+[node name="blue block4" type="TextureButton" parent="."]
+
+visible = false
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = -26.0
+margin_top = 15.0
+margin_right = -19.0
+margin_bottom = 26.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+texture_normal = ExtResource( 2 )
+params/resize_mode = 1
+texture_scale = Vector2( 0.1, 0.1 )
+params/stretch_mode = 0
+
+[node name="Success" type="AnimatedSprite" parent="."]
+
+visible = false
+position = Vector2( -2.19373, -18.1004 )
+scale = Vector2( 0.01, 0.0166433 )
+frames = SubResource( 3 )
+animation = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+anims/kudos_test = ExtResource( 6 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[connection signal="pressed"  from="sol"  to="." method="_on_TextureButton_pressed" binds=[  ]]
+
+[connection signal="pressed"  from="green block4"  to="." method="_on_green_block4_pressed" binds=[  ]]
+
+[connection signal="pressed"  from="blue block4"  to="." method="_on_blue_block4_pressed" binds=[  ]]

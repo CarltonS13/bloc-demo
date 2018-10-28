@@ -1,0 +1,20 @@
+[gd_scene load_steps=1 format=2]
+
+[ext_resource path="res://block.gd" type="Script" id=1]
+
+[node name="TextureButton" type="TextureButton"]
+
+focus_ignore_mouse = false
+focus_stop_mouse = true
+size_flags_horizontal = 2
+size_flags_vertical = 2
+margin_left = -1.0
+margin_top = 1.0
+margin_right = 259.0
+margin_bottom = 261.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+params/resize_mode = 0
+params/stretch_mode = 0
+script = ExtResource( 1 )
